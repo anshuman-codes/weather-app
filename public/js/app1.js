@@ -17,16 +17,16 @@ weatherForm.addEventListener('submit',(e)=>{
         response.json().then((data)=>{   
 
             if(data.error){
-               // return console.log("Error : "+data.error)
+  
                messageOne.textContent=data.error
                messagetwo.textContent=''
                return
             }
 
-            //console.log("Loaction found: "+data.location)
+
             messageOne.textContent="Loaction found: "+data.location
-            //console.log("Forecast: Current temperature is "+data.temp+" degree centigrade. It feels like "+data.feelsLike+" degree centigrade")
-            messagetwo.textContent="Forecast: Current temperature is "+data.temp+" degree centigrade. It feels like "+data.feelsLike+" degree centigrade"
+
+            messagetwo.textContent="Forecast: Current temperature is "+data.temp+" degree centigrade. It feels like "+data.feelsLike+" degree centigrade. Weather Description is : "+data.weather_des+" .Humidity is "+data.humidity+"%"
 
         })
 

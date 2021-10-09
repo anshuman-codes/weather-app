@@ -11,9 +11,12 @@ const weathercode=(lat,long,callback)=>{
             callback("Please enter a valid location",undefined)
         }
         else{
+            console.log(body.current)
             callback(undefined,{
                 temp:body.current.temperature,
-                feelsLike:body.current.feelslike
+                feelsLike:body.current.feelslike,
+                weather_des: body.current.weather_descriptions[0],
+                humidity: body.current.humidity
             })
         }
     })
